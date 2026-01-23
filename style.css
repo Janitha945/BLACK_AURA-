@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #fffafa;
+    background-color: #020202;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+    background: #000000;
+
+
+    
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4rem 10%;
+    align-items: center;
+    background: #020202;
+    gap: 2rem;
+}
+
+.content { flex: 1; min-width: 300px; }
+.product-image { flex: 1; min-width: 300px; text-align: center; }
+.product-image img { width: 100%; border-radius: 10px; }
+.product-image1{height: 60px;width: auto; border-radius: 5px;}
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+
+.buy-button {
+    display: inline-block;
+    background: #0fdada;
+    color: #060707;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.buy-button:hover { background: #333; }
+
+.about {
+    padding: 4rem 10%;
+    text-align: center;
+}
+
+.hoodie-showcase {
+    padding: 60px 5%;
+    background: #0a0a0a;
+    text-align: center;
+}
+
+.aura-title {
+    font-size: 2rem;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    color: #f8f5f5;
+}
+
+.collection-grid {
+    display: flex;
+    flex-direction: column; /* Stacks Black set on top of White set */
+    gap: 50px;
+    align-items: center;
+}
+
+.image-pair {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-pair img {
+    width: 45%; /* Shows two images side-by-side */
+    max-width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+    background: rgb(243, 239, 239);
+}
+
+/* Hover effect: makes the image pop when touched */
+.image-pair img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.product-info h3 {
+    margin: 5px 0;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+}
+
+.product-info p {
+    color: #666;
+    font-style: italic;
+}
+
+/* Mobile responsive: stack images if screen is too small */
+@media (max-width: 600px) {
+    .image-pair {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-pair img {
+        width: 90%;
+    }
+}
