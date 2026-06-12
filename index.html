@@ -3,112 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Name | Digital Card</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BLACK_AURA | The Legacy Wear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Playfair+Display:italic,wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #f4f4f4;
+            --accent-color: #0fdada; 
+            --premium-font: 'Playfair Display', serif;
+            --main-font: 'Montserrat', sans-serif;
+        }
 
+        body {
+            font-family: var(--main-font);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+        }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-sizing: border-box;
+            z-index: 100;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0) 100%);
+        }
 
+        .logo { font-weight: 700; letter-spacing: 6px; font-size: 1.2rem; text-transform: uppercase; }
 
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 10%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url("https://static.vecteezy.com/system/resources/thumbnails/065/750/207/small/a-black-hooded-sweatshirt-with-a-face-on-it-free-photo.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
 
+        .hero h1 { font-size: clamp(3.5rem, 12vw, 7rem); margin-bottom: 0.5rem; letter-spacing: -3px; text-transform: uppercase; font-weight: 700; }
+        .hero p { max-width: 650px; margin: 0 auto 2.5rem; color: #ccc; font-weight: 300; letter-spacing: 1px; }
 
+        .buy-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-color);
+            padding: 1.2rem 4rem;
+            text-decoration: none;
+            border: 1px solid var(--text-color);
+            letter-spacing: 3px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
+        .buy-button:hover { background: var(--text-color); color: var(--bg-color); transform: translateY(-3px); }
 
+        /* --- ABOUT & MISSION --- */
+        .about { padding: 12rem 10%; text-align: center; background-color: #080808; }
+        .about h2 { font-family: var(--premium-font); font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 3rem; font-style: italic; }
+        .about p { font-size: 1.15rem; color: #ccc; margin-bottom: 2rem; font-weight: 300; }
 
+        .mission-section {
+            padding: 8rem 15%;
+            background: #000;
+            text-align: center;
+            border-top: 1px solid #111;
+        }
+        .mission-section h2 { font-size: 0.8rem; letter-spacing: 4px; color: var(--accent-color); text-transform: uppercase; margin-bottom: 2rem; }
+        .mission-section p { font-family: var(--premium-font); font-size: clamp(1.5rem, 4vw, 2.5rem); line-height: 1.4; color: #fff; font-style: italic; }
 
+        /* --- GALLERY --- */
+        .lookbook { padding: 5rem 5% 5rem 5%; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 5rem 2.5rem; }
+        .img-container { overflow: hidden; aspect-ratio: 4/5; background: #111; }
+        .img-container img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(60%); transition: 1.5s ease; }
+        .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
 
+        /* --- SHOWCASE GRID --- */
+        .showcase-grid { display: grid; grid-template-columns: repeat(4, 1fr); background: #000; }
+        .showcase-item { aspect-ratio: 1/1; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .showcase-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .text-item { background: #dcdcdc; color: #000; text-align: center; padding: 10px; }
+        .text-item h3 { font-size: 1.1rem; letter-spacing: 1px; font-weight: 800; line-height: 1.2; text-transform: uppercase; }
 
+        /* --- FOOTER & CONTACT --- */
+        .main-footer { background: #000; padding: 6rem 5% 3rem; border-top: 1px solid #111; }
+        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 3rem; }
+        .footer-col h4 { font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 1.5rem; color: #fff; text-transform: uppercase; }
+        .footer-col ul { list-style: none; padding: 0; }
+        .footer-col ul li { margin-bottom: 0.6rem; }
+        .footer-col ul li a { color: #777; text-decoration: none; font-size: 1.00rem; transition: 0.3s; }
+        .footer-col ul li a:hover { color: var(--accent-color); }
+
+        .footer-input { width: 100%; background: #0a0a0a; border: 1px solid #222; color: white; padding: 12px; margin-bottom: 10px; box-sizing: border-box; font-family: inherit; }
+        .submit-btn { width: 100%; background: var(--text-color); color: #000; border: none; padding: 12px; font-family: var(--main-font); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: 0.3s ease; }
+        .submit-btn:hover { background: var(--accent-color); transform: translateY(-2px); }
+
+        .social-icons { margin-top: 1.5rem; display: flex; gap: 15px; flex-wrap: wrap; }
+        .social-icons a { color: var(--accent-color); font-weight: 700; font-size: 0.75rem; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; transition: 0.3s ease; }
+        .social-icons a:hover { color: #fff; transform: translateY(-2px); }
+
+        .bottom-bar { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid #111; text-align: center; }
+        .payment-icons { color: #444; font-size: 1.00rem; letter-spacing: 2px; margin-bottom: 1rem; }
+        .copyright { color: #333; font-size: 1.00rem; letter-spacing: 3px; text-transform: uppercase; }
+
+        /* --- ANIMATIONS --- */
+        .animate-text, .animate-photo { opacity: 0; transform: translateY(60px); transition: 1.4s ease-out; }
+        .visible { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
 <body>
 
-
-
-
-    <header>
-        <div class="logo">BLACK_AURA</div>
-        <img src="1766913893079.jpg" alt="product-image1" style="height: 200px; width: auto; float: right;">
-        
-    </header>
+    <header><div class="logo">BLACK_AURA</div></header>
 
     <section class="hero">
-        <div class="content">
+        <div class="content animate-text">
             <h1>THE HOODIE</h1>
-            <p>Your journey at SLTC is about more than just a degree—it’s about the late nights in Padukka, the breakthroughs in the lab, and the community you’ve built. Wear your achievement with pride. Our premium hoodies feature the SLTC crest on the front and your faculty legacy on the back. For those who learn, research, and transform.</p>
-            <a href="https://wa.me/94765290102?text=Hello%20BLACK_AURA!%20I'm%20an%20SLTC%20student%20and%20I'd%20like%20to%20order%20a%20faculty%20hoodie." class="buy-button">Buy Now — LKR4999</a>
-        </div>
-        <div class="product-image">
-            <img src="image of product.jpg" alt="Product Image">
-            
+            <p>For the researchers, the engineers, and the creators. <br> Wear your SLTC legacy with undeniable pride.</p>
+            <a href="file:///C:/Users/User/Desktop/Dk/new%20progect02/YOUR_PAYMENT_LINK_HERE" class="buy-button">Secure Your Piece — LKR 4999</a>
         </div>
     </section>
 
     <section class="about">
-        <h2>Who We Are</h2>
-        <p>The Spirit of BLACK_AURA
-"At BLACK_AURA, we believe your hard work deserves to be seen. We don’t just print hoodies; we craft the uniform of your ambition. Born from the drive of the SLTC community, BLACK_AURA was created to give students a way to wear their identity—bold, dark, and undeniable.
-
-You are more than a student; you are part of a legacy of researchers, engineers, and creators. We are here to make sure that when you walk across the Padukka campus, your faculty pride is felt before you even speak. This is your journey. This is your pride. This is your BLACK_AURA." <strong>hello@email.com</strong></p>
+        <div class="philosophy-text animate-text">
+            <h2>Who We Are</h2>
+            <p>At <strong>BLACK_AURA</strong>, we craft the uniform of your ambition. Born from the drive of the SLTC community, we give students a way to wear their identity—bold, dark, and undeniable.</p>
+        </div>
     </section>
-    <footer>
-        <p>&copy; 2026 BLACK_AURA</p>
+
+    <section id="mission" class="mission-section animate-text">
+        <h2>Our Mission</h2>
+        <p>"To empower every student to wear their hard work and academic pride as a badge of honor, fostering a community of excellence through premium, legacy-driven apparel."</p>
+    </section>
+
+    <section class="lookbook">
+        <div class="gallery-grid">
+            <div class="gallery-item animate-photo"><div class="img-container"><img src="C:\Users\User\Desktop\Dk\new progect02\New folder\Gemini_Generated_Image_s1lrjjs1lrjjs1lr.png"></div></div>
+            <div class="gallery-item animate-photo"><div class="img-container"><img src="C:\Users\User\Desktop\Dk\new progect02\New folder\Gemini_Generated_Image_eryroneryroneryr.png"></div></div>
+            <div class="gallery-item animate-photo"><div class="img-container"><img src="C:\Users\User\Desktop\Dk\new progect02\New folder\BA girls front.png"></div></div>
+            <div class="gallery-item animate-photo"><div class="img-container"><img src="C:\Users\User\Desktop\Dk\new progect02\New folder\BA girl back.png"></div></div>
+            
+        </div>
+    </section>
+
+  
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>COLLECTIONS</h4>
+                <ul>
+                    <li><a href="#">Hoodies</a></li>
+                    <li><a href="#">Ts</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://facebook.com/yourpage" target="_blank">FACEBOOK</a>
+                    <a href="https://instagram.com/yourpage" target="_blank">INSTAGRAM</a>
+                    <a href="https://youtube.com/yourpage" target="_blank">YOUTUBE</a>
+                    <a href="https://tiktok.com/@yourpage" target="_blank">TIKTOK</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>ABOUT US</h4>
+                <ul>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+                <form action="https://formspree.io/f/janithasithum945@gmail.com" method="POST">
+                    <input type="email" name="email" placeholder="Your Email" class="footer-input" required>
+                    <textarea name="message" placeholder="Your Message" class="footer-input" style="height: 60px;" required></textarea>
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="bottom-bar">
+            <div class="payment-icons">VISA | MASTERCARD | AMEX | SLTC APPROVED</div>
+            <div class="copyright">&copy; 2026 BLACK_AURA &bull;kURUNEGALA DARKSTATES [PVT] LTD &bull; Uniform of Ambition</div>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
-   
-        </div>
-    </div>
-</section>
-<section class="hoodie-showcase">
-    <h2 class="aura-title">THE SLTC COLLECTION</h2>
-    
-    <div class="collection-grid">
-        <div class="product-group">
-            <div class="image-pair">
-                <img src="image of product.jpg">
-    
-    
-    <div class="collection-grid">
-        <div class="product-group">
-            <div class="image-pair">
-                <img src="1760193384742.jpg" alt="Black Hoodie Front">
-                <img src="1760198207423.jpg" alt="Black Hoodie Back">
-            </div>
-            <div class="product-info">
-                <h3>MIDNIGHT BLACK</h3>
-                <p>Front: SLTC Crest | Back: Faculty Identity</p>
-            </div>
-        </div>
-
-        <div class="product-group">
-            <div class="image-pair">
-                <img src="1767711528922.jpg" alt="White Hoodie Front">
-                <img src="1767869162534.jpg" alt="White Hoodie Back">
-            </div>
-            <div class="product-info">
-                <h3>CLOUD WHITE</h3>
-                <p>Front: SLTC Crest | Back: Faculty Identity</p>
-            </div>
-        </div>
-  
-            <div class="product-info">
-                <h3>MIDNIGHT BLACK</h3>
-                <p></p>
-            </div>
-        </div>
-
-        <div class="product-group">
-            <div class="image-pair">
-                <img src="1760193384742.jpg" alt="White Hoodie Front">
-                <img src="1767711528922.jpg" alt="White Hoodie Back">
-            </div>
-            <div class="product-info">
-                <h3>CLOUD WHITE</h3>
-                <p></p>
-            </div>
-        </div>
-    </div>
-</section>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-text, .animate-photo').forEach(el => observer.observe(el));
+    </script>
 </body>
-
 </html>
 
 
